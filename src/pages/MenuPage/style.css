@@ -1,11 +1,11 @@
 .menuGrid{
   /* border:1px solid red; */
   flex:1;
-  /* margin-top:2vh; */
+  margin-top:6vh;
 }
 
 .rows{
-  padding-top:10vh;
+  padding-bottom:10vh;
   /* margin-bottom:10vh; */
 }
 
@@ -13,4 +13,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.rowsNext{
+  position: absolute;
+  padding:0;
+  left:0;
+  background-color: black;
+  height: 80px;
+  width:100%;
 }
