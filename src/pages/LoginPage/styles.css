@@ -11,7 +11,7 @@
 }
 
 .LoginContainer{
-  background-color: aliceblue;
+  /* background-color: aliceblue; */
   flex:3;
   display:flex;
   justify-content: center;

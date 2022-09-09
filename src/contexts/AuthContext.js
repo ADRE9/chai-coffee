@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useNavigate } from "react-router-dom";
 
 const authContext = React.createContext();
 
@@ -6,6 +7,8 @@ function useAuth() {
   const [authed, setAuthed] = React.useState(false);
   const [username, setUsername] = React.useState(null);
   const [password, setPassword] = React.useState(null);
+
+  const navigate = useNavigate();
 
   return {
     authed,
@@ -17,7 +20,7 @@ function useAuth() {
           setUsername(user);
           setPassword(pass);
           setAuthed(true);
-          res();
+          navigate("/menu");
         } else {
           return "Invalid Login Credentials"
         }

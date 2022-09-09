@@ -1,8 +1,57 @@
 .CardContainer{
   width:50%;
   height:50%;
-  background-color: var(--primary-blue);
+  /* background-color: var(--primary-blue); */
+  background-color: white;
   border-radius: 20px;
   display:flex;
   flex-direction: column;
+  box-shadow:  0 50px 100px -20px rgba(50,50,93,0.25),
+   0 30px 60px -30px rgba(0,0,0,0.3),
+    0 0 0px  #1d239b,
+    0 10px 20px  rgba(33,157,214,0.3);
 }
+
+.TopDiv{
+  flex:4;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.BottomDiv{
+  flex:6;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  padding:20px 20px 0px 20px;
+}
+
+.AvatarDiv{
+  border:1px solid black;
+  width:100px;
+  height:100px;
+  background-color: white;
+  border-radius: 50px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow:  0 10px 20px -10px rgba(50,50,93,0.25), 0 30px 60px -30px rgba(0,0,0,0.3), 0 0 0  #1d239b, 0 0 0  #219dd6;
+}
+
+.Avatar{
+  width:80%;
+  height:80%;
+}
+
+.form{
+  /* display:flex; */
+  flex:1;
+}
+
+.loginButton{
+  background-color:black;
+}
+
+
+
