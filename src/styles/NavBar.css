@@ -1,0 +1,12 @@
+.navbar{
+  box-shadow:0 10px 20px rgba(0,0,0,0.15);
+}
+
+.logo{
+  height:50px;
+}
+
+.navlink{
+  text-decoration: none;
+  color:black;
+}

@@ -10,27 +10,41 @@ function useAuth() {
 
   const navigate = useNavigate();
 
+  React.useEffect(() => {
+    const user = localStorage.getItem("username");
+    const pass = localStorage.getItem("password");
+    if (user) {
+      setUsername(user);
+      setPassword(pass);
+      setAuthed(true);
+      // navigate("/menu");
+    } else {
+      navigate("/login")
+    }
+  }, [navigate]);
+
   return {
     authed,
     username,
     password,
     login(user, pass) {
-        if (user === 'Admin1234' && pass === 'Password') {
-          setUsername(user);
-          setPassword(pass);
-          setAuthed(true);
-          navigate("/menu");
-        } else {
-          return "Invalid Login Credentials"
-        }
+      if (user === "Admin1234" && pass === "Password") {
+        setUsername(user);
+        localStorage.setItem("username", "Admin1234");
+        setPassword(pass);
+        localStorage.setItem("password", "Password");
+        setAuthed(true);
+        navigate("/menu");
+      } else {
+        return "Invalid Login Credentials";
+      }
     },
     logout() {
-      return new Promise((res) => {
-        setUsername(null);
-        setPassword(null);
-        setAuthed(false);
-        return "Logged Out Sucessfully"
-      });
+      setUsername(null);
+      setPassword(null);
+      setAuthed(false);
+      localStorage.clear();
+      return "Logged Out Sucessfully";
     },
   };
 }

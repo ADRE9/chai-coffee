@@ -32,7 +32,7 @@ function LoginCard() {
       <div className="BottomDiv">
           <Input onChange={(e)=>setUserCredentials({...userCredentials,username:e.target.value})} placeholder="Username" className="inputs"/>
           <br />
-          <Input onChange={(e)=>setUserCredentials({...userCredentials,password:e.target.value})} placeholder="Password" className="inputs"/>
+          <Input type="password" onChange={(e)=>setUserCredentials({...userCredentials,password:e.target.value})} placeholder="Password" className="inputs"/>
           <br />
           <Button disabled={isDisable()} onClick={()=>handleLogin()} color="secondary" className="loginButton">LOGIN</Button>
       </div>

@@ -1,0 +1,16 @@
+.menuGrid{
+  /* border:1px solid red; */
+  flex:1;
+  /* margin-top:2vh; */
+}
+
+.rows{
+  padding-top:10vh;
+  /* margin-bottom:10vh; */
+}
+
+.cols{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
