@@ -36,7 +36,7 @@ function useAuth() {
         setAuthed(true);
         navigate("/menu");
       } else {
-        return "Invalid Login Credentials";
+        alert("Invalid Login Credentials");
       }
     },
     logout() {

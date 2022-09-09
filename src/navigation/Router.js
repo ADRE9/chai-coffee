@@ -20,9 +20,9 @@ function Router() {
       <Route
         path="/menu"
         element={
-          // <RequireAuth>
-          <MenuPage />
-          // </RequireAuth>
+          <RequireAuth>
+            <MenuPage />
+          </RequireAuth>
         }
       />
       <Route

@@ -7,7 +7,6 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
 } from "reactstrap";
 
 import Logo from "../assets/svg/Logo.svg";
@@ -27,19 +26,19 @@ function NavBar(args) {
         <Collapse isOpen={isOpen} id="navbarScroll" navbar>
           <Nav className="ms-auto" navbar>
             <NavItem>
-              <NavLink>
-                <Link className="navlink" to="/menu">MENU</Link>
-              </NavLink>
+              <Link className="me-3 navlink" to="/menu">
+                MENU
+              </Link>
             </NavItem>
             <NavItem>
-              <NavLink>
-                <Link className="navlink" to="/order-lists">ORDERS</Link>
-              </NavLink>
+              <Link className="me-5 navlink" to="/order-lists">
+                ORDERS
+              </Link>
             </NavItem>
             <NavItem>
-              <NavLink>
-                <Link className="navlink" to="/login">LOGOUT</Link>
-              </NavLink>
+              <Link className="me-2 navlink" to="/login">
+                LOGOUT
+              </Link>
             </NavItem>
           </Nav>
         </Collapse>
