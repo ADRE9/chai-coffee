@@ -5,7 +5,6 @@ import RequireAuth from "../components/RequireAuth";
 import MenuPage from "../pages/MenuPage/MenuPage";
 import BillingPage from "../pages/BillingPage/BillingPage";
 import OrderListsPage from "../pages/OrderListsPage/OrderListsPage";
-import NavBar from "../components/NavBar";
 
 function Router() {
   return (
@@ -22,7 +21,7 @@ function Router() {
         path="/menu"
         element={
           // <RequireAuth>
-            <MenuPage />
+          <MenuPage />
           // </RequireAuth>
         }
       />
