@@ -14,9 +14,8 @@ function useAuth() {
     authed,
     username,
     password,
-    login(user,pass) {
-      return new Promise((res) => {
-        if (user === 'Admin1234' && password === 'Password') {
+    login(user, pass) {
+        if (user === 'Admin1234' && pass === 'Password') {
           setUsername(user);
           setPassword(pass);
           setAuthed(true);
@@ -24,8 +23,6 @@ function useAuth() {
         } else {
           return "Invalid Login Credentials"
         }
-        
-      });
     },
     logout() {
       return new Promise((res) => {

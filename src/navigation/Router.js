@@ -8,27 +8,27 @@ import OrderListsPage from "../pages/OrderListsPage/OrderListsPage";
 function Router() {
   return ( 
     <Routes>
-      <Route path="/" element={
+      <Route  path="/" element={
         <RequireAuth>
           <MenuPage/>
         </RequireAuth>
       } />
-      <Route path="/menu" element={
+      <Route  path="/menu" element={
         <RequireAuth>
           <MenuPage/>
         </RequireAuth>
       } />
-      <Route path="/billing" element={
+      <Route exact path="/billing" element={
         <RequireAuth>
           <BillingPage/>
         </RequireAuth>
       } />
-      <Route path="/order-lists" element={
+      <Route exact path="/order-lists" element={
         <RequireAuth>
           <OrderListsPage/>
         </RequireAuth>
       } />
-      <Route path='/login' element={<LoginPage/>}/>
+      <Route exact path='/login' element={<LoginPage />} />
     </Routes>
    );
 }
