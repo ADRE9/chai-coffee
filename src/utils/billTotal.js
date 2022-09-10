@@ -5,6 +5,6 @@ export const billTotal = (obj1,obj2) => {
     }
     return 0;
   }).reduce((result, number) => result + number);
-  console.log(sum)
+  // console.log(sum)
   return sum;
 }

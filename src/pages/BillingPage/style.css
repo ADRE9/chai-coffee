@@ -31,11 +31,9 @@
   width:100%;
 }
 
-.nextButton{
-  position: absolute;
-  right:50px;
-  top:-20px;
-  width: 148px;
+.submitButton{
+  width:148px;
+  max-width: 148px;
   height: 49px;
   background: #D8315B;
   border: 1px solid #E8879F;
@@ -47,7 +45,7 @@
   color:white;
 }
 
-.nextButton:disabled{
+.submitButton:disabled{
   background: gray;
   border: 1px solid gray;
   box-shadow: 0px 4px 12px rgba(3, 3, 3, 0.7);
