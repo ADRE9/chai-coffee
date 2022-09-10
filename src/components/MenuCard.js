@@ -2,7 +2,7 @@ import { Plus, Dash } from "react-bootstrap-icons";
 import { CardTitle,CardText, CardBody } from "reactstrap";
 import "../styles/MenuCard.css";
 
-function MenuCard({ sourceImg, title, description, setOrder, order }) {
+function MenuCard({ sourceImg, title, description, setOrder, order,rate }) {
   const addOrder = () => {
     const sum = {};
     sum[title] = order[title] + 1;
@@ -22,6 +22,9 @@ function MenuCard({ sourceImg, title, description, setOrder, order }) {
 
   return (
     <div className="cardContainer">
+      <div className="rateContainer">
+        <p>₹ {rate}</p>
+      </div>
       <div className="avatarContainer">
         <div className="avatarCircle">
           <img

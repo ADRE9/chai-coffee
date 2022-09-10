@@ -1,5 +1,6 @@
 import { Col, Container, Row } from "reactstrap";
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
 import "./style.css";
 import MenuCard from "../../components/MenuCard";
@@ -23,14 +24,16 @@ const initialState = {
 
 function MenuPage() {
   const [order, setOrder] = useState({ ...initialState });
+  const navigate = useNavigate();
 
   console.log(order);
 
-  const handleNextButton = () => {
+  const moveToBilling = () => {
     let sum = 0;
     sum = sumOfOrderObjects(order);
     console.log(sum);
-  };
+    navigate("/billing",{state:{...order}})
+  }
 
   return (
     <Container className="menuGrid">
@@ -41,6 +44,7 @@ function MenuPage() {
               <MenuCard
                 setOrder={setOrder}
                 order={order}
+                rate={card.rate}
                 title={card.title}
                 description={card.description}
                 sourceImg={require(`../../assets/png/${card.icon}.png`)}
@@ -56,6 +60,7 @@ function MenuPage() {
               <MenuCard
                 setOrder={setOrder}
                 order={order}
+                rate={card.rate}
                 title={card.title}
                 description={card.description}
                 sourceImg={require(`../../assets/png/${card.icon}.png`)}
@@ -66,7 +71,7 @@ function MenuPage() {
       </Row>
       <div className="rowsNext">
         <button
-          onClick={handleNextButton}
+          onClick={moveToBilling}
           disabled={sumOfOrderObjects(order) !== 0 ? false : true}
           className="nextButton"
         >

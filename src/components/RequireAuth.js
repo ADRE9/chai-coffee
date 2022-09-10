@@ -2,6 +2,7 @@ import useAuth  from '../contexts/AuthContext';
 import { Navigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom'
 
+//TODO : Uncomment the commented part before pushing
 function RequireAuth({ children }) {
   const { authed } = useAuth();
   const location = useLocation();
@@ -13,3 +14,4 @@ function RequireAuth({ children }) {
   );
 }
 export default RequireAuth;
+    // children

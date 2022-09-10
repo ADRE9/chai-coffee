@@ -1,0 +1,54 @@
+.billContainer{
+  flex:1;
+  margin-top:6vh;
+  margin-bottom:6vh;
+  background-color: rgb(171, 196, 218);
+  border-radius: 30px;
+}
+
+.topRow{
+  padding:5vh;
+}
+
+.bottomRow{
+  flex:1;
+  border-top:5px solid white;
+}
+
+
+.total{
+  border-top:3px solid white;
+}
+
+.rowsSubmit{
+  position: absolute;
+  padding:0;
+  left:0;
+  bottom:0;
+  margin-top:20vh;
+  background: #0A2463;
+  height: 80px;
+  width:100%;
+}
+
+.nextButton{
+  position: absolute;
+  right:50px;
+  top:-20px;
+  width: 148px;
+  height: 49px;
+  background: #D8315B;
+  border: 1px solid #E8879F;
+  box-shadow: 0px 4px 12px rgba(216, 49, 91, 0.7);
+  border-radius: 5px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  color:white;
+}
+
+.nextButton:disabled{
+  background: gray;
+  border: 1px solid gray;
+  box-shadow: 0px 4px 12px rgba(3, 3, 3, 0.7);
+}
