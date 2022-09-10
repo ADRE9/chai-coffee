@@ -78,6 +78,7 @@ function BillingPage() {
                 </Row>
               );
             }
+            return null;
           })}
           <Row className="total mt-3 ms-3 me-3">
             <Col className="text-white mt-3">
