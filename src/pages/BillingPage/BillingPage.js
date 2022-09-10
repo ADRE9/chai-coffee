@@ -7,7 +7,6 @@ import {
   InputGroupText,
   Row,
 } from "reactstrap";
-import { useState } from "react";
 
 import "./style.css";
 import { sumOfOrderObjects } from "../../utils/sumOfOrders";
