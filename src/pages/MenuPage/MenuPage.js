@@ -26,12 +26,10 @@ function MenuPage() {
   const [order, setOrder] = useState({ ...initialState });
   const navigate = useNavigate();
 
-  console.log(order);
 
   const moveToBilling = () => {
     let sum = 0;
     sum = sumOfOrderObjects(order);
-    console.log(sum);
     navigate("/billing",{state:{...order}})
   }
 

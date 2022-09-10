@@ -8,6 +8,5 @@ export const ordersArray = (obj) => {
     return null;
   });
   const filteredArr = arr.filter(item => item !== null);
-  console.log(filteredArr);
   return filteredArr;
 }

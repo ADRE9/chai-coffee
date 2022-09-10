@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation,useNavigate } from "react-router-dom";
 import {
   Col,
   Container,
@@ -9,6 +9,7 @@ import {
 } from "reactstrap";
 import { useFormik } from "formik";
 import * as yup from "yup";
+import axios from 'axios';
 
 import "./style.css";
 import { sumOfOrderObjects } from "../../utils/sumOfOrders";
@@ -18,10 +19,18 @@ import { ordersArray } from "../../utils/ordersArray";
 
 function BillingPage() {
   const location = useLocation();
-  console.log(location);
+  const navigate = useNavigate();
 
-  const sumbitToBackend = (values) => {
-    ordersArray(location.state);
+  const sumbitToBackend = async (values) => {
+    try {
+      const orders = ordersArray(location.state);
+      const json={...values,itemDetails:[...orders],totalAmount:billTotal(location.state, totalMenu)}
+      const res = await axios.post('http://localhost:8080/order', json);
+      navigate("/menu");
+      console.log(res);
+    } catch (e) {
+      console.log(e);
+    }
   }
 
   const formik = useFormik({
@@ -31,7 +40,7 @@ function BillingPage() {
       customerPhone: "",
     },
     onSubmit: (values) => {
-      sumbitToBackend(values);
+       sumbitToBackend(values);
     },
     validationSchema: yup.object({
       customerName: yup.string().required("It is a required field"),
@@ -47,7 +56,7 @@ function BillingPage() {
     }),
   });
 
-  console.log(formik.errors)
+  // console.log(formik.errors)
 
   return (
     <Container className="billContainer">
