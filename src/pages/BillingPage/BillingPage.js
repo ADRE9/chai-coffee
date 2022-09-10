@@ -7,17 +7,15 @@ import {
   InputGroupText,
   Row,
 } from "reactstrap";
-import { useState } from 'react';
+import { useState } from "react";
 
 import "./style.css";
 import { sumOfOrderObjects } from "../../utils/sumOfOrders";
 import { totalMenu } from "../../constants/menu";
 import { billTotal } from "../../utils/billTotal";
 
-
 function BillingPage() {
   const location = useLocation();
-  const [totalSum, setTotalSum] = useState();
   console.log(location);
 
   return (
@@ -52,6 +50,7 @@ function BillingPage() {
                 </Row>
               );
             }
+            return null;
           })}
           <Row className="total mt-3 ms-3 me-3">
             <Col className="text-white mt-3">
@@ -72,7 +71,10 @@ function BillingPage() {
                     <h5 className="text-white">{item}</h5>
                   </Col>
                   <Col>
-                    <h5 className="text-white">{location.state[item] * totalMenu[item].rate} <small>(Rate ₹ {totalMenu[item].rate})</small></h5>
+                    <h5 className="text-white">
+                      {location.state[item] * totalMenu[item].rate}{" "}
+                      <small>(Rate ₹ {totalMenu[item].rate})</small>
+                    </h5>
                   </Col>
                 </Row>
               );
@@ -83,7 +85,7 @@ function BillingPage() {
               <h5>Total</h5>
             </Col>
             <Col className="text-white mt-3">
-              <h5>{billTotal(location.state,totalMenu)}</h5>
+              <h5>{billTotal(location.state, totalMenu)}</h5>
             </Col>
           </Row>
         </Col>
